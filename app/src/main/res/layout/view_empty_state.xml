@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimation"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <ImageView
+        android:id="@+id/ivEmptyIcon"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:contentDescription="Empty state icon"
+        android:src="@android:drawable/ic_menu_search"
+        app:tint="@color/text_secondary" />
+
+    <TextView
+        android:id="@+id/tvEmptyTitle"
+        style="@style/TextAppearance.ResQMeal.Heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        tools:text="No Food Nearby" />
+
+    <TextView
+        android:id="@+id/tvEmptyMessage"
+        style="@style/TextAppearance.ResQMeal.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        tools:text="There are no surplus food posts available in your selected radius." />
+
+    <com.resqmeal.app.views.PrimaryButton
+        android:id="@+id/btnEmptyAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

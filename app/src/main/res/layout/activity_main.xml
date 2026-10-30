@@ -1,19 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/background"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Title / Brand Header -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Heading1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ResQ Meal"
+            android:textColor="@color/primary" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Design System &amp; Component Demo (Step 1)"
+            android:textColor="@color/text_secondary" />
+
+        <!-- 1. Typography Showcase -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:headerTitle="1. Typography (Poppins)" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heading 1 — SemiBold 24sp" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Heading 2 — SemiBold 20sp" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Heading3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Heading 3 — Medium 18sp" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Body text — Regular 14sp (#1F2A1F)" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.BodyBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Body bold text — Medium 14sp" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Caption text — Regular 12sp (#5F6B5F)" />
+
+        <!-- 2. Status Chips Showcase -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="2. Status Chips" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.resqmeal.app.views.StatusChip
+                    android:id="@+id/chipAvailable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <com.resqmeal.app.views.StatusChip
+                    android:id="@+id/chipClaimed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <com.resqmeal.app.views.StatusChip
+                    android:id="@+id/chipCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <com.resqmeal.app.views.StatusChip
+                    android:id="@+id/chipExpired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <com.resqmeal.app.views.StatusChip
+                    android:id="@+id/chipCancelled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- 3. Primary Button with Loading State -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="3. Primary Button (Tap to toggle loading)" />
+
+        <com.resqmeal.app.views.PrimaryButton
+            android:id="@+id/btnDemoPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:buttonText="Claim Food (Tap Me)" />
+
+        <!-- 4. Outlined Input Field -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="4. Outlined Input (12dp radius)" />
+
+        <com.resqmeal.app.views.OutlinedInput
+            android:id="@+id/inputDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:inputHint="Food Title (e.g. Veg Biryani)" />
+
+        <!-- 5. Stat Card -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:headerTitle="5. Stat Card" />
+
+        <com.resqmeal.app.views.StatCard
+            android:id="@+id/statCardDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:statLabel="Meals Donated to Date"
+            app:statNumber="128" />
+
+        <!-- 6. Food Card -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="6. Food Card" />
+
+        <include
+            android:id="@+id/sampleFoodCard"
+            layout="@layout/view_food_card" />
+
+        <!-- 7. Shimmer Loading Card -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="7. Shimmer Loading Card" />
+
+        <com.resqmeal.app.views.ShimmerFoodCard
+            android:id="@+id/shimmerCardDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 8. Dialog & PhotoPicker Triggers -->
+        <com.resqmeal.app.views.SectionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:headerTitle="8. Dialogs &amp; PhotoPicker" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTestConfirmDialog"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Confirm Dialog"
+                android:textColor="@color/primary"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTestPhotoPicker"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Photo Picker"
+                android:textColor="@color/primary"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/primary" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+    </LinearLayout>
+
+</ScrollView>

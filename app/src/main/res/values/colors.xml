@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Core Brand Palette -->
+    <color name="primary">#2E7D32</color>
+    <color name="primary_dark">#1B5E20</color>
+    <color name="primary_light">#A5D6A7</color>
+    <color name="accent">#FB8C00</color>
+    <color name="background">#F7FAF5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1F2A1F</color>
+    <color name="text_secondary">#5F6B5F</color>
+    <color name="divider">#E0E6DD</color>
+    <color name="error">#D32F2F</color>
+    <color name="success">#388E3C</color>
+    <color name="warning">#F9A825</color>
+    <color name="info">#1976D2</color>
+
+    <!-- Shimmer Palette -->
+    <color name="shimmer_base">#E8EEE6</color>
+    <color name="shimmer_highlight">#F7FAF5</color>
+
+    <!-- Status Chip Colors -->
+    <color name="status_available_bg">#E8F5E9</color>
+    <color name="status_available_text">#2E7D32</color>
+    <color name="status_claimed_bg">#E3F2FD</color>
+    <color name="status_claimed_text">#1976D2</color>
+    <color name="status_completed_bg">#EEEEEE</color>
+    <color name="status_completed_text">#424242</color>
+    <color name="status_expired_bg">#FFF3E0</color>
+    <color name="status_expired_text">#E65100</color>
+    <color name="status_cancelled_bg">#FFEBEE</color>
+    <color name="status_cancelled_text">#D32F2F</color>
+
+    <!-- Common -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

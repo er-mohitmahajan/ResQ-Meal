@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PrimaryButton">
+        <attr name="buttonText" format="string" />
+        <attr name="buttonEnabled" format="boolean" />
+        <attr name="buttonLoading" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="OutlinedInput">
+        <attr name="inputHint" format="string" />
+        <attr name="inputError" format="string" />
+        <attr name="android:inputType" />
+    </declare-styleable>
+
+    <declare-styleable name="SectionHeader">
+        <attr name="headerTitle" format="string" />
+        <attr name="actionText" format="string" />
+        <attr name="showAction" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="StatCard">
+        <attr name="statNumber" format="string" />
+        <attr name="statLabel" format="string" />
+        <attr name="statIcon" format="reference" />
+    </declare-styleable>
+</resources>

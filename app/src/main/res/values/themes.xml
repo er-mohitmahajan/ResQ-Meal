@@ -1,8 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ResQMeal" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Base application theme: Light theme only per README Section 1.1 -->
+    <style name="Base.Theme.ResQMeal" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Color attributes -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+
+        <!-- Default Widget Styles -->
+        <item name="materialCardViewStyle">@style/Widget.ResQMeal.Card</item>
+        <item name="textInputStyle">@style/Widget.ResQMeal.OutlinedInput</item>
     </style>
 
     <style name="Theme.ResQMeal" parent="Base.Theme.ResQMeal" />
