@@ -105,3 +105,4 @@ public class StatusChip extends FrameLayout {
         return textView.getText().toString();
     }
 }
+

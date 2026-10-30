@@ -43,3 +43,4 @@ public class ShimmerFoodCard extends ShimmerFrameLayout {
         setShimmer(customShimmer);
     }
 }
+

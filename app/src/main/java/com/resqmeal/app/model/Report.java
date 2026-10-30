@@ -114,3 +114,4 @@ public class Report implements Serializable {
         this.resolvedAt = resolvedAt;
     }
 }
+

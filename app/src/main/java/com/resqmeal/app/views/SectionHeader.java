@@ -69,3 +69,4 @@ public class SectionHeader extends LinearLayout {
         tvHeaderAction.setOnClickListener(listener);
     }
 }
+

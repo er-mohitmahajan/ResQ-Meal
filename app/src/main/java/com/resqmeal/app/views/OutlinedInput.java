@@ -88,3 +88,4 @@ public class OutlinedInput extends FrameLayout {
         editText.addTextChangedListener(watcher);
     }
 }
+

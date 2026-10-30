@@ -88,3 +88,4 @@ public class StatCard extends MaterialCardView {
         ivStatIcon.setVisibility(VISIBLE);
     }
 }
+

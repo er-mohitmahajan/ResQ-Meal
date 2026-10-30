@@ -83,3 +83,4 @@ public class AppNotification implements Serializable {
         this.createdAt = createdAt;
     }
 }
+

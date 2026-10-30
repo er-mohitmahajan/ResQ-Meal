@@ -245,3 +245,4 @@ public class FoodPost implements Serializable {
         this.updatedAt = updatedAt;
     }
 }
+

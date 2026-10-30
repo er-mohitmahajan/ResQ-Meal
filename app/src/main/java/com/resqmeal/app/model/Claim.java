@@ -137,3 +137,4 @@ public class Claim implements Serializable {
         this.cancelledAt = cancelledAt;
     }
 }
+

@@ -103,3 +103,4 @@ public final class Constants {
     public static final String PREFS_NAME = "resqmeal_prefs";
     public static final String KEY_ONBOARDING_COMPLETED = "onboarding_completed";
 }
+
