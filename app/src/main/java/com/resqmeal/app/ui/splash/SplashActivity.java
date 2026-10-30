@@ -36,10 +36,23 @@ public class SplashActivity extends AppCompatActivity {
 
         boolean onboardingCompleted = SharedPrefsHelper.isOnboardingCompleted(this);
 
-        Intent intent = new Intent(this, AuthActivity.class);
         if (!onboardingCompleted) {
+            Intent intent = new Intent(this, AuthActivity.class);
             intent.putExtra(AuthActivity.EXTRA_START_DESTINATION, AuthActivity.DESTINATION_ONBOARDING);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Intent intent = new Intent(this, AuthActivity.class);
+
+        if (currentUser == null) {
+            intent.putExtra(AuthActivity.EXTRA_START_DESTINATION, AuthActivity.DESTINATION_LOGIN);
+        } else if (!currentUser.isEmailVerified()) {
+            intent.putExtra(AuthActivity.EXTRA_START_DESTINATION, AuthActivity.DESTINATION_VERIFY_EMAIL);
         } else {
+            // User is authenticated and verified (Step 4 will route directly to role activities)
             intent.putExtra(AuthActivity.EXTRA_START_DESTINATION, AuthActivity.DESTINATION_LOGIN);
         }
 

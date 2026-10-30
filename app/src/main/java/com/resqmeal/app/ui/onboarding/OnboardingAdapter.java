@@ -57,3 +57,4 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
         }
     }
 }
+

@@ -21,3 +21,4 @@ public class SharedPrefsHelper {
         getPrefs(context).edit().clear().apply();
     }
 }
+

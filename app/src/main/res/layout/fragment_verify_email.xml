@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Email Verification"
+            android:src="@android:drawable/ic_dialog_email"
+            app:tint="@color/primary" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Verify Your Email"
+            android:textColor="@color/primary" />
+
+        <TextView
+            android:id="@+id/tvVerifyMessage"
+            style="@style/TextAppearance.ResQMeal.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="We have sent a verification link to your email address. Please click the link to activate your account."
+            android:textColor="@color/text_secondary" />
+
+        <com.resqmeal.app.views.PrimaryButton
+            android:id="@+id/btnCheckVerified"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:buttonText="I've Verified, Continue" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResendEmail"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Resend Verification Email"
+            android:textColor="@color/primary"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/primary" />
+
+        <TextView
+            android:id="@+id/btnBackToLogin"
+            style="@style/TextAppearance.ResQMeal.BodyBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="8dp"
+            android:text="Sign In with Different Account"
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+
+</ScrollView>

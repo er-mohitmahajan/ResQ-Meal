@@ -123,3 +123,4 @@ public class OnboardingFragment extends Fragment {
         binding = null;
     }
 }
+
