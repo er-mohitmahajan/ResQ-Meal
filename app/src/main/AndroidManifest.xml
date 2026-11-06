@@ -32,6 +32,16 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".ui.shell.DonorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.shell.ReceiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.shell.AdminActivity"
+            android:exported="false" />
+
         <!-- Demo / Component Testing Activity -->
         <activity
             android:name=".MainActivity"

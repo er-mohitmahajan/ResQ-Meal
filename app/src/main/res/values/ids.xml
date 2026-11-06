@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nav_home" type="id" />
+    <item name="nav_posts" type="id" />
+    <item name="nav_notifications" type="id" />
+    <item name="nav_profile" type="id" />
+    <item name="nav_feed" type="id" />
+    <item name="nav_map" type="id" />
+    <item name="nav_claims" type="id" />
+    <item name="nav_dashboard" type="id" />
+    <item name="nav_approvals" type="id" />
+    <item name="nav_reports" type="id" />
+</resources>

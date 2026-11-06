@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">ResQ Meal</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_my_posts">My Posts</string>
+    <string name="tab_notifications">Notifications</string>
+    <string name="tab_profile">Profile</string>
+    <string name="tab_feed">Feed</string>
+    <string name="tab_map">Map</string>
+    <string name="tab_my_claims">My Claims</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_approvals">Approvals</string>
+    <string name="tab_reports">Reports</string>
+    <string name="placeholder_title_default">Coming soon</string>
+    <string name="placeholder_message_default">This section will be available in a later development step.</string>
+    <string name="placeholder_home">Your donor impact and food listings will appear here.</string>
+    <string name="placeholder_my_posts">Your food posts and their statuses will appear here.</string>
+    <string name="placeholder_notifications">Your updates and notifications will appear here.</string>
+    <string name="placeholder_profile">Your account details and settings will appear here.</string>
+    <string name="placeholder_feed">Nearby available food will appear here.</string>
+    <string name="placeholder_map">Nearby food locations will appear on the map here.</string>
+    <string name="placeholder_my_claims">Your active and completed claims will appear here.</string>
+    <string name="placeholder_dashboard">Platform activity and impact statistics will appear here.</string>
+    <string name="placeholder_approvals">Receiver accounts awaiting review will appear here.</string>
+    <string name="placeholder_reports">Open and resolved reports will appear here.</string>
+    <string name="pending_approval_title">Approval pending</string>
+    <string name="pending_approval_message">Your receiver account is awaiting admin approval. You can use the feed after your account is approved.</string>
+    <string name="approval_rejected_title">Approval not granted</string>
+    <string name="approval_rejected_message">Your receiver account was not approved. Contact the ResQ Meal team if you need help.</string>
+    <string name="approval_rejection_reason">Reason: %1$s</string>
+    <string name="account_deactivated">Your account has been deactivated.</string>
+    <string name="account_role_unrecognized">Your account role is not recognized. Please contact support.</string>
+    <string name="account_profile_missing">Your account profile could not be found. Please sign in again.</string>
+    <string name="account_profile_invalid">Your account profile could not be loaded.</string>
+    <string name="session_refresh_failed">Could not refresh your sign-in session. Please sign in again.</string>
+    <string name="session_load_failed">Could not load your account: %1$s</string>
 </resources>

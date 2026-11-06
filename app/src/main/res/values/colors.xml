@@ -35,4 +35,6 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="nav_item_selected">#2E7D32</color>
+    <color name="nav_item_unselected">#5F6B5F</color>
 </resources>

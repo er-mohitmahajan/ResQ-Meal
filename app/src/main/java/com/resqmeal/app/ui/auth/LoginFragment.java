@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 import com.google.firebase.auth.FirebaseUser;
 import com.resqmeal.app.R;
 import com.resqmeal.app.databinding.FragmentLoginBinding;
+import com.resqmeal.app.utils.RoleRouter;
 import com.resqmeal.app.utils.Validators;
 import com.resqmeal.app.viewmodel.AuthViewModel;
 
@@ -88,8 +89,11 @@ public class LoginFragment extends Fragment {
                     Toast.makeText(requireContext(), "Please verify your email address to continue.", Toast.LENGTH_SHORT).show();
                     Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_verifyEmailFragment);
                 } else {
-                    String name = resource.getData() != null ? resource.getData().getName() : "User";
-                    Toast.makeText(requireContext(), "Signed in successfully! Welcome, " + name, Toast.LENGTH_SHORT).show();
+                    if (resource.getData() == null) {
+                        Toast.makeText(requireContext(), R.string.account_profile_invalid, Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    RoleRouter.route(requireActivity(), resource.getData());
                 }
             }
         });
