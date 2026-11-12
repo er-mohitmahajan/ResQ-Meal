@@ -10,91 +10,489 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="@dimen/screen_padding">
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="20dp"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="24dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/ic_launcher" />
+        <!-- Brand Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_app_logo" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Heading2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/on_surface"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_pune_badge"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:paddingStart="6dp"
+                        android:paddingTop="1dp"
+                        android:paddingEnd="6dp"
+                        android:paddingBottom="1dp"
+                        android:text="@string/login_header_badge"
+                        android:textColor="@color/on_primary_fixed"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextAppearance.ResQMeal.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/login_subtitle_header"
+                    android:textColor="@color/on_surface_variant" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Welcome Greetings -->
         <TextView
             style="@style/TextAppearance.ResQMeal.Heading1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Welcome Back"
-            android:textColor="@color/primary" />
+            android:layout_marginTop="24dp"
+            android:text="@string/login_title"
+            android:textColor="@color/on_surface"
+            android:textSize="24sp" />
 
         <TextView
-            style="@style/TextAppearance.ResQMeal.Caption"
+            style="@style/TextAppearance.ResQMeal.Body"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Sign in to continue rescue and redistribution"
-            android:textColor="@color/text_secondary" />
+            android:text="@string/login_subtitle"
+            android:textColor="@color/on_surface_variant" />
+
+        <!-- Trust & Safety Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_banner_secondary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="2dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_verified"
+                app:tint="@color/secondary" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/login_trust_safety_desc"
+                android:textColor="@color/on_secondary_fixed"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Login Form: Email -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.BodyBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_email_label"
+            android:textColor="@color/on_surface"
+            android:textSize="12sp" />
 
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="4dp"
             android:inputType="textEmailAddress"
-            app:inputHint="Email Address" />
+            app:inputHint="@string/login_email_hint" />
+
+        <!-- Login Form: Password with Header Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.BodyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/login_password_label"
+                android:textColor="@color/on_surface"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btnForgotPassword"
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="4dp"
+                android:text="@string/login_forgot_password"
+                android:textColor="@color/primary" />
+        </RelativeLayout>
 
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="4dp"
             android:inputType="textPassword"
-            app:inputHint="Password" />
+            app:inputHint="@string/login_password_hint" />
 
-        <TextView
-            android:id="@+id/btnForgotPassword"
-            style="@style/TextAppearance.ResQMeal.Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="4dp"
-            android:text="Forgot Password?"
-            android:textColor="@color/primary" />
-
+        <!-- Sign In Button -->
         <com.resqmeal.app.views.PrimaryButton
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:buttonText="Sign In" />
+            android:layout_marginTop="20dp"
+            app:buttonText="@string/login_sign_in" />
 
+        <!-- Divider with Demo Shortcuts Label -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/surface_container_high" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/background"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/login_quick_role_title"
+                android:textColor="@color/outline"
+                android:textSize="11sp" />
+        </FrameLayout>
+
+        <!-- Hackathon Quick Role Demo Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- Donor Demo Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="@null"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_storefront"
+                            app:tint="@color/secondary" />
+
+                        <TextView
+                            style="@style/TextAppearance.ResQMeal.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_banner_secondary"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingStart="6dp"
+                            android:paddingTop="1dp"
+                            android:paddingEnd="6dp"
+                            android:paddingBottom="1dp"
+                            android:text="DONOR"
+                            android:textColor="@color/secondary"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.BodyBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/login_demo_donor_name"
+                        android:textColor="@color/on_surface"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/login_demo_donor_sub"
+                        android:textColor="@color/outline"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Receiver Demo Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="@null"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_volunteer"
+                            app:tint="@color/tertiary" />
+
+                        <TextView
+                            style="@style/TextAppearance.ResQMeal.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_pill_surface"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingStart="6dp"
+                            android:paddingTop="1dp"
+                            android:paddingEnd="6dp"
+                            android:paddingBottom="1dp"
+                            android:text="CLAIMER"
+                            android:textColor="@color/tertiary"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.BodyBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/login_demo_receiver_name"
+                        android:textColor="@color/on_surface"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/login_demo_receiver_sub"
+                        android:textColor="@color/outline"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Live Community Pulse Stat Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/surface_container"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_pill_surface_low">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_eco" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextAppearance.ResQMeal.BodyBold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/login_pulse_title"
+                            android:textColor="@color/on_surface"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/TextAppearance.ResQMeal.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/login_pulse_active"
+                            android:textColor="@color/primary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/login_pulse_desc"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Footer Registration Link -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/TextAppearance.ResQMeal.Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account? "
-                android:textColor="@color/text_secondary" />
+                android:text="@string/login_no_account"
+                android:textColor="@color/on_surface_variant" />
 
             <TextView
                 android:id="@+id/btnGoToRegister"
                 style="@style/TextAppearance.ResQMeal.BodyBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:padding="4dp"
+                android:text="@string/login_register_action"
                 android:textColor="@color/primary" />
         </LinearLayout>
+
+        <!-- Community Guidelines / FSSAI Subtext -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Community Guidelines  •  FSSAI Surplus Standards"
+            android:textColor="@color/outline"
+            android:textSize="11sp" />
 
     </LinearLayout>
 
 </ScrollView>
-

@@ -64,6 +64,10 @@ public class PrimaryButton extends FrameLayout {
         }
     }
 
+    public void setButtonText(CharSequence text) {
+        setText(text);
+    }
+
     public CharSequence getText() {
         return buttonText;
     }
@@ -108,4 +112,3 @@ public class PrimaryButton extends FrameLayout {
         });
     }
 }
-

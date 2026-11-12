@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        style="@style/TextAppearance.ResQMeal.Heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter Food" />
+
+    <TextView
+        style="@style/TextAppearance.ResQMeal.BodyBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Distance Radius" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2km"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 km" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip5km"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 km" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip10km"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="10 km" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip25km"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 km" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        style="@style/TextAppearance.ResQMeal.BodyBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Food Type" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupFoodType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFoodAny"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Any" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVeg"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNonVeg"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non-Veg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFoodBoth"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Both" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        style="@style/TextAppearance.ResQMeal.BodyBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Category" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryAny"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Any" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryCookedMeal"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cooked meal" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryBakery"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bakery" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryFruitsVeg"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fruits &amp; vegetables" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryPackaged"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packaged" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategoryOther"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.resqmeal.app.views.PrimaryButton
+        android:id="@+id/btnApplyFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:buttonText="Apply Filters" />
+
+</LinearLayout>

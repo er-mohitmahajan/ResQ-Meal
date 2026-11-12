@@ -37,4 +37,30 @@
     <color name="transparent">#00000000</color>
     <color name="nav_item_selected">#2E7D32</color>
     <color name="nav_item_unselected">#5F6B5F</color>
+
+    <!-- Stitch Design Tokens -->
+    <color name="primary_deep">#0D631B</color>
+    <color name="primary_container">#2E7D32</color>
+    <color name="on_primary_container">#CBFFC2</color>
+    <color name="primary_fixed">#A3F69C</color>
+    <color name="primary_fixed_dim">#88D982</color>
+    <color name="on_primary_fixed">#002204</color>
+    <color name="on_primary_fixed_variant">#005312</color>
+    <color name="secondary">#8F4E00</color>
+    <color name="secondary_container">#FF8F06</color>
+    <color name="secondary_fixed">#FFDCC2</color>
+    <color name="secondary_fixed_dim">#FFB77B</color>
+    <color name="on_secondary_fixed">#2E1500</color>
+    <color name="on_secondary_container">#623300</color>
+    <color name="surface_container">#ECEFEA</color>
+    <color name="surface_container_low">#F1F4EF</color>
+    <color name="surface_container_high">#E6E9E4</color>
+    <color name="surface_container_highest">#E0E3DF</color>
+    <color name="surface_container_lowest">#FFFFFF</color>
+    <color name="on_surface">#181C1A</color>
+    <color name="on_surface_variant">#40493D</color>
+    <color name="outline">#707A6C</color>
+    <color name="outline_variant">#BFCABA</color>
+    <color name="tertiary">#335F3A</color>
+    <color name="tertiary_fixed">#BDEFBE</color>
 </resources>

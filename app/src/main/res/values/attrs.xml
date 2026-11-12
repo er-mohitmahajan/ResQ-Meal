@@ -7,9 +7,19 @@
     </declare-styleable>
 
     <declare-styleable name="OutlinedInput">
+        <attr name="hint" format="string" />
         <attr name="inputHint" format="string" />
         <attr name="inputError" format="string" />
         <attr name="android:inputType" />
+    </declare-styleable>
+
+    <declare-styleable name="EmptyStateView">
+        <attr name="emptyTitle" format="string" />
+        <attr name="emptyMessage" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="StatusChip">
+        <attr name="chipText" format="string" />
     </declare-styleable>
 
     <declare-styleable name="SectionHeader">
@@ -24,4 +34,3 @@
         <attr name="statIcon" format="reference" />
     </declare-styleable>
 </resources>
-

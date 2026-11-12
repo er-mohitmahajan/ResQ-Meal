@@ -1,5 +1,7 @@
 package com.resqmeal.app.repository;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -116,9 +118,11 @@ public class AuthRepository {
                                     if (documentSnapshot.exists()) {
                                         User user = documentSnapshot.toObject(User.class);
                                         if (user != null) {
+                                            //Log.d("AuthRepository", "User isActive: " + user.isActive());
                                             if (!user.isActive()) {
+                                                Log.d("AuthRepository", "User isActive: " + user.isActive());
                                                 auth.signOut();
-                                                result.setValue(Resource.error("Your account has been deactivated.", null));
+                                                result.setValue(Resource.error("Your account has been deactivated."+user.isActive(), null));
                                             } else {
                                                 result.setValue(Resource.success(user));
                                             }
@@ -230,3 +234,4 @@ public class AuthRepository {
         auth.signOut();
     }
 }
+

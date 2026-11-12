@@ -1,59 +1,314 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Widget.ResQMeal.Card"
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shimmerLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp">
+    android:layout_height="match_parent"
+    app:shimmer_auto_start="false"
+    app:shimmer_base_alpha="0.6"
+    app:shimmer_duration="1400"
+    app:shimmer_highlight_alpha="1.0">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Shimmer Photo Box & Chip -->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/shimmer_base" />
-
-            <View
-                android:layout_width="72dp"
-                android:layout_height="24dp"
-                android:layout_gravity="top|end"
-                android:layout_margin="12dp"
-                android:background="@drawable/bg_shimmer_pill" />
-        </FrameLayout>
-
-        <!-- Shimmer Text Placeholders -->
+        <!-- Filter Chips Skeleton Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp">
+            android:layout_marginBottom="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <View
-                android:layout_width="180dp"
-                android:layout_height="18dp"
-                android:background="@drawable/bg_shimmer_line" />
+                android:layout_width="56dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_shimmer_pill" />
 
             <View
-                android:layout_width="120dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_shimmer_line" />
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_shimmer_pill" />
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_shimmer_line" />
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_shimmer_pill" />
+
+            <View
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_shimmer_pill" />
         </LinearLayout>
+
+        <!-- Shimmer Card 1: Featured / Active Banner Format -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/surface_container_lowest"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="1dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <!-- Image Placeholder with Top-Right Pill -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_shimmer_rect" />
+
+                    <View
+                        android:layout_width="70dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="top|end"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_shimmer_pill" />
+                </FrameLayout>
+
+                <!-- Title & Meta Lines -->
+                <View
+                    android:layout_width="220dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_shimmer_line" />
+
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="13dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_shimmer_line" />
+
+                <!-- Bottom Meta & Action Button -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/bg_shimmer_line" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:layout_width="96dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/bg_shimmer_rect_sm" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Shimmer Card 2: Row-Style Compact Rescue Listing -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/surface_container_lowest"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="1dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/bg_shimmer_rect" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="16dp"
+                                android:background="@drawable/bg_shimmer_line" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <View
+                                android:layout_width="54dp"
+                                android:layout_height="18dp"
+                                android:background="@drawable/bg_shimmer_pill" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="130dp"
+                            android:layout_height="12dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_shimmer_line" />
+
+                        <View
+                            android:layout_width="80dp"
+                            android:layout_height="12dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_shimmer_line" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Bottom Action Buttons Skeleton -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_shimmer_rect_sm" />
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_shimmer_rect_sm" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Shimmer Card 3: Row-Style Compact Rescue Listing -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/surface_container_lowest"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="1dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/bg_shimmer_rect" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="110dp"
+                                android:layout_height="16dp"
+                                android:background="@drawable/bg_shimmer_line" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <View
+                                android:layout_width="54dp"
+                                android:layout_height="18dp"
+                                android:background="@drawable/bg_shimmer_pill" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="12dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_shimmer_line" />
+
+                        <View
+                            android:layout_width="70dp"
+                            android:layout_height="12dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_shimmer_line" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Bottom Action Buttons Skeleton -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_shimmer_rect_sm" />
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_shimmer_rect_sm" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
-
+</com.facebook.shimmer.ShimmerFrameLayout>

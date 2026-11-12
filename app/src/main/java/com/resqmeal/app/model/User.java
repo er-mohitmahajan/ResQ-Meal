@@ -18,6 +18,7 @@ public class User implements Serializable {
     private Double lng;
     private String geohash;
     private String profilePhotoUrl;
+    private String profilePhotoPublicId;
     private String approvalStatus; // approved, pending, rejected
     private String rejectionReason;
     private boolean isActive;
@@ -25,6 +26,7 @@ public class User implements Serializable {
     private long totalMealsDonated;
     private long totalClaimed;
     private long totalMealsReceived;
+    private long activeClaimCount;
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
@@ -129,6 +131,14 @@ public class User implements Serializable {
         this.profilePhotoUrl = profilePhotoUrl;
     }
 
+    public String getProfilePhotoPublicId() {
+        return profilePhotoPublicId;
+    }
+
+    public void setProfilePhotoPublicId(String profilePhotoPublicId) {
+        this.profilePhotoPublicId = profilePhotoPublicId;
+    }
+
     public String getApprovalStatus() {
         return approvalStatus;
     }
@@ -185,6 +195,14 @@ public class User implements Serializable {
         this.totalMealsReceived = totalMealsReceived;
     }
 
+    public long getActiveClaimCount() {
+        return activeClaimCount;
+    }
+
+    public void setActiveClaimCount(long activeClaimCount) {
+        this.activeClaimCount = activeClaimCount;
+    }
+
     public Timestamp getCreatedAt() {
         return createdAt;
     }
@@ -201,4 +219,3 @@ public class User implements Serializable {
         this.updatedAt = updatedAt;
     }
 }
-

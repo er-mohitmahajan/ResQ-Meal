@@ -3,6 +3,7 @@ package com.resqmeal.app;
 import com.resqmeal.app.model.User;
 import com.resqmeal.app.ui.onboarding.OnboardingItem;
 import com.resqmeal.app.utils.Constants;
+import com.resqmeal.app.utils.GeoUtils;
 import com.resqmeal.app.utils.Resource;
 import com.resqmeal.app.utils.Validators;
 
@@ -67,6 +68,37 @@ public class ExampleUnitTest {
     }
 
     @Test
+    public void validators_foodPostFields_followRoadmapLimits() {
+        assertFalse(Validators.isValidFoodTitle("ab"));
+        assertTrue(Validators.isValidFoodTitle("abc"));
+        assertTrue(Validators.isValidFoodTitle(repeat('t', 60)));
+        assertFalse(Validators.isValidFoodTitle(repeat('t', 61)));
+
+        assertTrue(Validators.isValidDescription(repeat('d', 300)));
+        assertFalse(Validators.isValidDescription(repeat('d', 301)));
+        assertFalse(Validators.isValidQuantity(0));
+        assertFalse(Validators.isValidQuantity(Double.POSITIVE_INFINITY));
+        assertTrue(Validators.isValidQuantity(0.5));
+        assertFalse(Validators.isValidServings(0));
+        assertTrue(Validators.isValidServings(1));
+    }
+
+    @Test
+    public void validators_expiryMustBeWithinBusinessRuleWindow() {
+        long now = 1_000_000L;
+        long preparedAt = now - 60 * 60_000L;
+        long minimumExpiry = now + Constants.MIN_EXPIRY_MINUTES * 60_000L;
+        long maximumExpiry = now + Constants.MAX_EXPIRY_HOURS * 60 * 60_000L;
+
+        assertTrue(Validators.isValidExpiryTime(preparedAt, minimumExpiry, now));
+        assertTrue(Validators.isValidExpiryTime(preparedAt, maximumExpiry, now));
+        assertFalse(Validators.isValidExpiryTime(preparedAt, minimumExpiry - 1, now));
+        assertFalse(Validators.isValidExpiryTime(preparedAt, maximumExpiry + 1, now));
+        assertFalse(Validators.isValidExpiryTime(now + 1, maximumExpiry, now));
+        assertFalse(Validators.isValidExpiryTime(maximumExpiry, minimumExpiry, now));
+    }
+
+    @Test
     public void resource_status_helpers() {
         Resource<String> loading = Resource.loading(null);
         assertTrue(loading.isLoading());
@@ -79,5 +111,40 @@ public class ExampleUnitTest {
         Resource<String> error = Resource.error("Failed", null);
         assertTrue(error.isError());
         assertEquals("Failed", error.getMessage());
+    }
+
+    @Test
+    public void geoUtils_generatesNineCharacterHashAndQueryBounds() {
+        String geohash = GeoUtils.getGeohash(37.4219999, -122.0840575);
+
+        assertEquals(Constants.GEOHASH_PRECISION, geohash.length());
+        assertFalse(GeoUtils.getGeoHashQueryBounds(37.4219999, -122.0840575, 10_000).isEmpty());
+    }
+
+    @Test
+    public void geoUtils_rejectsInvalidCoordinatesAndRadius() {
+        assertFalse(GeoUtils.isValidCoordinates(91, 0));
+        assertFalse(GeoUtils.isValidCoordinates(0, -181));
+        assertTrue(GeoUtils.isValidCoordinates(-90, 180));
+
+        try {
+            GeoUtils.getGeohash(Double.NaN, 0);
+            fail("Expected invalid coordinates to be rejected");
+        } catch (IllegalArgumentException expected) {
+            assertNotNull(expected.getMessage());
+        }
+
+        try {
+            GeoUtils.getGeoHashQueryBounds(0, 0, 0);
+            fail("Expected invalid radius to be rejected");
+        } catch (IllegalArgumentException expected) {
+            assertNotNull(expected.getMessage());
+        }
+    }
+
+    private String repeat(char character, int count) {
+        char[] characters = new char[count];
+        java.util.Arrays.fill(characters, character);
+        return new String(characters);
     }
 }

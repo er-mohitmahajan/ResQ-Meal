@@ -1,8 +1,12 @@
 package com.resqmeal.app.ui.shell;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.resqmeal.app.R;
+import com.resqmeal.app.ui.admin.AdminDashboardFragment;
+import com.resqmeal.app.ui.admin.AdminReportsFragment;
+import com.resqmeal.app.ui.admin.AdminUsersFragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,5 +31,17 @@ public class AdminActivity extends BaseRoleActivity {
     @Override
     protected int getDefaultTabId() {
         return R.id.nav_dashboard;
+    }
+
+    @Override
+    protected Fragment getFragmentForTab(int tabId) {
+        if (tabId == R.id.nav_dashboard) {
+            return new AdminDashboardFragment();
+        } else if (tabId == R.id.nav_approvals) {
+            return AdminUsersFragment.newApprovals();
+        } else if (tabId == R.id.nav_reports) {
+            return new AdminReportsFragment();
+        }
+        return super.getFragmentForTab(tabId);
     }
 }

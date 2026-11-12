@@ -1,9 +1,15 @@
 package com.resqmeal.app.ui.shell;
 
 import androidx.annotation.NonNull;
+import android.content.Intent;
 import androidx.fragment.app.Fragment;
 
 import com.resqmeal.app.R;
+import com.resqmeal.app.ui.common.NotificationsFragment;
+import com.resqmeal.app.ui.common.ProfileFragment;
+import com.resqmeal.app.ui.receiver.FeedFragment;
+import com.resqmeal.app.ui.receiver.MapFragment;
+import com.resqmeal.app.ui.receiver.MyClaimsFragment;
 import com.resqmeal.app.utils.Constants;
 
 import java.util.Arrays;
@@ -24,6 +30,8 @@ public class ReceiverActivity extends BaseRoleActivity {
                         getString(R.string.tab_map), getString(R.string.placeholder_map)),
                 new RoleTab(R.id.nav_claims, R.drawable.ic_nav_claims,
                         getString(R.string.tab_my_claims), getString(R.string.placeholder_my_claims)),
+                new RoleTab(R.id.nav_notifications, R.drawable.ic_nav_notifications,
+                        getString(R.string.tab_notifications), getString(R.string.placeholder_notifications)),
                 new RoleTab(R.id.nav_profile, R.drawable.ic_nav_profile,
                         getString(R.string.tab_profile), getString(R.string.placeholder_profile))
         );
@@ -32,6 +40,22 @@ public class ReceiverActivity extends BaseRoleActivity {
     @Override
     protected int getDefaultTabId() {
         return R.id.nav_feed;
+    }
+
+    @Override
+    protected Fragment getFragmentForTab(int tabId) {
+        if (tabId == R.id.nav_feed) {
+            return new FeedFragment();
+        } else if (tabId == R.id.nav_map) {
+            return new MapFragment();
+        } else if (tabId == R.id.nav_claims) {
+            return new MyClaimsFragment();
+        } else if (tabId == R.id.nav_notifications) {
+            return new NotificationsFragment();
+        } else if (tabId == R.id.nav_profile) {
+            return new ProfileFragment();
+        }
+        return super.getFragmentForTab(tabId);
     }
 
     @Override
@@ -55,5 +79,23 @@ public class ReceiverActivity extends BaseRoleActivity {
             return getString(R.string.approval_rejected_title);
         }
         return super.getPendingApprovalTitle();
+    }
+
+    @Override
+    protected void onAccountStatusLoaded(@NonNull com.google.firebase.firestore.DocumentSnapshot snapshot) {
+        String approvalStatus = snapshot.getString("approvalStatus");
+        if (Constants.APPROVAL_PENDING.equals(approvalStatus)) {
+            return;
+        }
+        String currentStatus = getIntent().getStringExtra(EXTRA_APPROVAL_STATUS);
+        if (approvalStatus == null || approvalStatus.equals(currentStatus)) {
+            return;
+        }
+        Intent intent = new Intent(this, ReceiverActivity.class);
+        intent.putExtra(EXTRA_APPROVAL_STATUS, approvalStatus);
+        intent.putExtra(EXTRA_REJECTION_REASON, snapshot.getString("rejectionReason"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 }

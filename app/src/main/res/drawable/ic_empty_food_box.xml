@@ -1,0 +1,103 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="160dp"
+    android:viewportWidth="200"
+    android:viewportHeight="160">
+
+    <!-- Playful Steam & Aroma -->
+    <path
+        android:strokeColor="#FF8F06"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M75,42C75,36 82,32 82,24" />
+
+    <path
+        android:strokeColor="#0D631B"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M125,38C125,32 118,28 118,20" />
+
+    <!-- Bread Loaf peeking from box -->
+    <path
+        android:fillColor="#8F4E00"
+        android:pathData="M116,55C124,47 140,52 144,61C147,67 140,73 131,73C122,73 113,63 116,55Z" />
+
+    <path
+        android:fillColor="#FFB77B"
+        android:pathData="M118,57C124,50 138,54 142,61C144,66 138,71 130,71C123,71 115,63 118,57Z" />
+
+    <path
+        android:strokeColor="#8F4E00"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M120,58L124,66 M128,54L132,62" />
+
+    <!-- Crisp Organic Apple -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M106,53a13,13 0 1,0 0,26a13,13 0 1,0 0,-26z" />
+
+    <path
+        android:fillColor="#0D631B"
+        android:pathData="M111,54a11,11 0 1,0 0,22a11,11 0 1,0 0,-22z" />
+
+    <path
+        android:strokeColor="#707A6C"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M108,53C108,48 111,46 114,45" />
+
+    <path
+        android:fillColor="#88D982"
+        android:pathData="M114,47C118,46 120,49 119,51C115,52 114,47 114,47Z" />
+
+    <!-- Chef Cap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M68,50a12,12 0 1,0 0,24a12,12 0 1,0 0,-24z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82,42a14,14 0 1,0 0,28a14,14 0 1,0 0,-28z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M96,50a12,12 0 1,0 0,24a12,12 0 1,0 0,-24z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,64h34a3,3 0 0,1 3,3v3a3,3 0 0,1 -3,3h-34a3,3 0 0,1 -3,-3v-3a3,3 0 0,1 3,-3z" />
+
+    <!-- Warm Donation Box Base -->
+    <path
+        android:fillColor="#FFDCC2"
+        android:pathData="M58,70h84a16,16 0 0,1 16,16v42a16,16 0 0,1 -16,16h-84a16,16 0 0,1 -16,-16v-42a16,16 0 0,1 16,-16z" />
+
+    <path
+        android:fillColor="#FFB77B"
+        android:pathData="M50,70h100a8,8 0 0,1 8,8v8a8,8 0 0,1 -8,8h-100a8,8 0 0,1 -8,-8v-8a8,8 0 0,1 8,-8z" />
+
+    <path
+        android:fillColor="#FFDCC2"
+        android:pathData="M42,82H158V128C158,136.84 150.84,144 142,144H58C49.16,144 42,136.84 42,128V82Z" />
+
+    <!-- White Heart Badge on Box -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,96a16,16 0 1,0 0,32a16,16 0 1,0 0,-32z" />
+
+    <path
+        android:fillColor="#FF8F06"
+        android:pathData="M100,119L98.55,117.68C93.4,113.01 90,109.93 90,106.12C90,103.04 92.42,100.62 95.5,100.62C97.24,100.62 98.91,101.43 100,102.69C101.09,101.43 102.76,100.62 104.5,100.62C107.58,100.62 110,103.04 110,106.12C110,109.93 106.6,113.01 101.45,117.69L100,119Z" />
+
+    <!-- Freshness Sparkles -->
+    <path
+        android:fillColor="#FF8F06"
+        android:pathData="M36,54L38,48L44,46L38,44L36,38L34,44L28,46L34,48L36,54Z" />
+
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M164,88L165.5,83.5L170,82L165.5,80.5L164,76L162.5,80.5L158,82L162.5,83.5L164,88Z" />
+
+</vector>
+

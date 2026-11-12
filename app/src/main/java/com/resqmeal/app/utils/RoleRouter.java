@@ -11,6 +11,7 @@ import com.resqmeal.app.R;
 import com.resqmeal.app.model.User;
 import com.resqmeal.app.ui.auth.AuthActivity;
 import com.resqmeal.app.ui.shell.AdminActivity;
+import com.resqmeal.app.ui.shell.BaseRoleActivity;
 import com.resqmeal.app.ui.shell.DonorActivity;
 import com.resqmeal.app.ui.shell.ReceiverActivity;
 
@@ -48,6 +49,11 @@ public final class RoleRouter {
             return;
         }
 
+        if ((Constants.ROLE_DONOR.equals(role) || Constants.ROLE_RECEIVER.equals(role))
+                && activity.getIntent().getBooleanExtra(
+                BaseRoleActivity.EXTRA_OPEN_NOTIFICATIONS, false)) {
+            intent.putExtra(BaseRoleActivity.EXTRA_OPEN_NOTIFICATIONS, true);
+        }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         activity.startActivity(intent);
         activity.finish();

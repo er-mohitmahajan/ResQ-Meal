@@ -11,33 +11,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/screen_padding">
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="20dp"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="28dp">
 
+        <!-- Screen Header -->
         <TextView
             style="@style/TextAppearance.ResQMeal.Heading1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Join ResQ Meal"
-            android:textColor="@color/primary" />
+            android:text="@string/register_title"
+            android:textColor="@color/on_surface"
+            android:textSize="24sp" />
 
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/register_subtitle"
+            android:textColor="@color/on_surface_variant" />
+
+        <!-- Role Selection Header -->
         <TextView
             style="@style/TextAppearance.ResQMeal.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Reduce waste and bring meals to those in need"
-            android:textColor="@color/text_secondary" />
-
-        <!-- Role Selection -->
-        <TextView
-            style="@style/TextAppearance.ResQMeal.BodyBold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="I want to:"
-            android:textColor="@color/text_primary" />
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/register_select_role"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="11sp" />
 
+        <!-- Role Toggle Group (Bento Grid Style) -->
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/toggleGroupRole"
             android:layout_width="match_parent"
@@ -51,43 +58,99 @@
                 android:id="@+id/btnRoleDonor"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Donate Food"
-                android:textSize="13sp"
-                app:cornerRadius="12dp" />
+                android:minHeight="56dp"
+                android:paddingStart="8dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="10dp"
+                android:text="Donor\n(Restaurants/Messes)"
+                android:textSize="12sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_storefront"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="20dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRoleReceiver"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Receive / Claim"
-                android:textSize="13sp"
-                app:cornerRadius="12dp" />
+                android:minHeight="56dp"
+                android:paddingStart="8dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="10dp"
+                android:text="Receiver\n(NGOs/Shelters)"
+                android:textSize="12sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_volunteer"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="20dp" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
-        <!-- Subtype Selection -->
-        <TextView
-            android:id="@+id/tvTypeLabel"
-            style="@style/TextAppearance.ResQMeal.BodyBold"
-            android:layout_width="wrap_content"
+        <!-- Category Dropdown Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Donor Category:"
-            android:textColor="@color/text_primary" />
+            android:layout_marginTop="16dp">
 
+            <TextView
+                android:id="@+id/tvTypeLabel"
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/register_type_label_donor"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_verified"
+                    app:tint="@color/primary" />
+
+                <TextView
+                    style="@style/TextAppearance.ResQMeal.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/register_verified_badging"
+                    android:textColor="@color/primary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Subtype Dropdown -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTypeDropdown"
             style="@style/Widget.ResQMeal.OutlinedInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:hint="Select Type">
+            android:hint="Select Category">
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteType"
@@ -99,40 +162,187 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Full Name -->
+        <!-- Instant Access Notice Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/surface_container_low"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <FrameLayout
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/bg_pill_surface">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_info" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.BodyBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_donor_info_title"
+                        android:textColor="@color/on_surface"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/TextAppearance.ResQMeal.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/register_donor_info_desc"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Input: Full Name / Organization -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_business_name_label"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp" />
+
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:inputHint="Full Name or Organization Name" />
+            android:layout_marginTop="4dp"
+            app:inputHint="@string/register_business_name_hint" />
 
-        <!-- Email -->
+        <!-- Input: Email -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_email_label"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp" />
+
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:inputType="textEmailAddress"
-            app:inputHint="Email Address" />
+            app:inputHint="@string/register_email_hint" />
 
-        <!-- Phone -->
+        <!-- Input: Phone -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_phone_label"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp" />
+
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:inputType="phone"
-            app:inputHint="10-Digit Mobile Number" />
+            app:inputHint="@string/register_phone_hint" />
 
-        <!-- Password -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/register_phone_helper"
+            android:textColor="@color/outline"
+            android:textSize="11sp" />
+
+        <!-- Input: Password -->
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_password_label"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp" />
+
         <com.resqmeal.app.views.OutlinedInput
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:inputType="textPassword"
-            app:inputHint="Password (min 8 chars, 1 letter, 1 number)" />
+            app:inputHint="@string/register_password_hint" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/register_password_helper"
+            android:textColor="@color/outline"
+            android:textSize="11sp" />
+
+        <!-- Terms and Guidelines Consent -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_check"
+                app:tint="@color/primary" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/register_terms_consent"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="11sp" />
+        </LinearLayout>
 
         <!-- Register Button -->
         <com.resqmeal.app.views.PrimaryButton
@@ -140,30 +350,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:buttonText="Create Account" />
+            app:buttonText="@string/register_btn_create" />
 
-        <!-- Already have account -->
+        <!-- Already Have Account Row -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/TextAppearance.ResQMeal.Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? "
-                android:textColor="@color/text_secondary" />
+                android:text="@string/register_already_have_account"
+                android:textColor="@color/on_surface_variant" />
 
             <TextView
                 android:id="@+id/btnGoToLogin"
                 style="@style/TextAppearance.ResQMeal.BodyBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:padding="4dp"
+                android:text="@string/register_sign_in_action"
                 android:textColor="@color/primary" />
         </LinearLayout>
 

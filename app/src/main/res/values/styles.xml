@@ -70,6 +70,10 @@
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.ResQMeal.Circular" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
     <!-- Component Styles -->
     <style name="Widget.ResQMeal.Card" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
@@ -100,4 +104,3 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.ResQMeal.Input</item>
     </style>
 </resources>
-

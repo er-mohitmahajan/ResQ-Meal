@@ -42,7 +42,10 @@ public class OutlinedInput extends FrameLayout {
 
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.OutlinedInput);
-            String hint = a.getString(R.styleable.OutlinedInput_inputHint);
+            String hint = a.getString(R.styleable.OutlinedInput_hint);
+            if (hint == null) {
+                hint = a.getString(R.styleable.OutlinedInput_inputHint);
+            }
             String error = a.getString(R.styleable.OutlinedInput_inputError);
             int inputType = a.getInt(R.styleable.OutlinedInput_android_inputType, -1);
             a.recycle();
@@ -88,4 +91,3 @@ public class OutlinedInput extends FrameLayout {
         editText.addTextChangedListener(watcher);
     }
 }
-

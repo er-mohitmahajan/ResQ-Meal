@@ -75,6 +75,10 @@ public class StatCard extends MaterialCardView {
         }
     }
 
+    public void setStat(String number, String label, int iconRes) {
+        setData(number, label, iconRes);
+    }
+
     public void setNumber(String number) {
         tvStatNumber.setText(number);
     }
@@ -88,4 +92,3 @@ public class StatCard extends MaterialCardView {
         ivStatIcon.setVisibility(VISIBLE);
     }
 }
-

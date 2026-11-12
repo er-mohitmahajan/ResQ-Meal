@@ -94,7 +94,7 @@ public final class Constants {
     public static final int GEOHASH_PRECISION = 9;
 
     // Cloudinary Configuration
-    public static final String CLOUDINARY_CLOUD_NAME = "resqmeal"; // Replace with your Cloudinary cloud name
+    public static final String CLOUDINARY_CLOUD_NAME = "dsarlt8lk"; // Replace with your Cloudinary cloud name
     public static final String CLOUDINARY_UPLOAD_PRESET = "resqmeal_unsigned"; // Supports "resqmeal_unsigned" or "foodbridge_unsigned"
     public static final String CLOUDINARY_FOLDER_FOOD_POSTS = "resqmeal/food_posts";
     public static final String CLOUDINARY_FOLDER_PROFILES = "resqmeal/profiles";

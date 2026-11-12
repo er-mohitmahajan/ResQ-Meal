@@ -56,3 +56,4 @@ public class AuthViewModel extends AndroidViewModel {
         authRepository.logout();
     }
 }
+

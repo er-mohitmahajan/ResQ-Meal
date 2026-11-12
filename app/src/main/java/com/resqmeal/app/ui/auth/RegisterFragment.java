@@ -172,3 +172,4 @@ public class RegisterFragment extends Fragment {
         binding = null;
     }
 }
+

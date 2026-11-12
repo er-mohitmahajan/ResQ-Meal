@@ -547,7 +547,7 @@ A large amount of cooked and packaged food is thrown away every day by restauran
 7. Receivers with `approvalStatus != approved` can see only the Pending Approval screen.
 8. Users with `isActive == false` are signed out and see a "Account deactivated" message.
 9. Donor phone is shown to the receiver only after the claim. Receiver phone is shown to the donor only after the claim.
-10. Impact stats are updated when a pickup is completed: donor `totalPosted` and `totalMealsDonated`, receiver `totalClaimed` and `totalMealsReceived`.
+10. Impact stats are updated when a pickup is completed: donor `totalMealsDonated` and receiver `totalClaimed` and `totalMealsReceived`. Donor `totalPosted` counts food posts created and is incremented when a post is published.
 
 ### 6.5 Detailed Working Flows
 
@@ -713,12 +713,14 @@ Complete the steps **in order**. Do not start a step until the previous step's "
 
 - Build `NotificationRepository`, the Firestore listener, `NotificationHelper` (local notifications) and the Notifications screen with unread badge and mark-as-read.
 - Create notifications for every event in Section 5.5.
+- Android 13 and later require the runtime notification permission; notifications remain available in-app when permission is denied.
 - **Done when:** a claim on one phone produces a notification on the donor's phone.
 
 ### Step 14 — Admin Panel
 
 - Build Dashboard (count aggregation cards), Receiver Approvals, Reports list and detail, and Users list with search and activate/deactivate.
-- Admin can remove any post.
+- Admin can remove any post from circulation; the post record is retained for claim and audit history.
+- Admin status is checked before admin repository reads and inside each admin mutation transaction. Firestore Security Rules must enforce the same role check server-side before deployment.
 - **Done when:** the admin can approve a receiver and the receiver's app moves from Pending Approval to the Feed.
 
 ### Step 15 — Reporting and Error Handling

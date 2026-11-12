@@ -1,8 +1,12 @@
 package com.resqmeal.app.ui.shell;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.resqmeal.app.R;
+import com.resqmeal.app.ui.donor.DonorHomeFragment;
+import com.resqmeal.app.ui.donor.MyPostsFragment;
+import com.resqmeal.app.ui.common.ProfileFragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,5 +31,17 @@ public class DonorActivity extends BaseRoleActivity {
     @Override
     protected int getDefaultTabId() {
         return R.id.nav_home;
+    }
+
+    @Override
+    protected Fragment getFragmentForTab(int tabId) {
+        if (tabId == R.id.nav_home) {
+            return new DonorHomeFragment();
+        } else if (tabId == R.id.nav_posts) {
+            return new MyPostsFragment();
+        } else if (tabId == R.id.nav_profile) {
+            return new ProfileFragment();
+        }
+        return super.getFragmentForTab(tabId);
     }
 }

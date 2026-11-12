@@ -45,10 +45,19 @@ public final class Validators {
     }
 
     public static boolean isValidQuantity(double quantity) {
-        return quantity > 0;
+        return Double.isFinite(quantity) && quantity > 0;
     }
 
     public static boolean isValidServings(long servings) {
         return servings > 0;
+    }
+
+    public static boolean isValidExpiryTime(long preparedAtMillis, long expiryTimeMillis, long nowMillis) {
+        long minimumExpiryMillis = nowMillis + Constants.MIN_EXPIRY_MINUTES * 60_000L;
+        long maximumExpiryMillis = nowMillis + Constants.MAX_EXPIRY_HOURS * 60 * 60_000L;
+        return preparedAtMillis <= nowMillis
+                && expiryTimeMillis >= minimumExpiryMillis
+                && expiryTimeMillis <= maximumExpiryMillis
+                && expiryTimeMillis > preparedAtMillis;
     }
 }

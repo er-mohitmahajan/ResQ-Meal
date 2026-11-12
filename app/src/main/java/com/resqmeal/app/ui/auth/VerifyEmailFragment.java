@@ -122,3 +122,4 @@ public class VerifyEmailFragment extends Fragment {
         binding = null;
     }
 }
+

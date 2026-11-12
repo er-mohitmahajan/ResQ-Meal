@@ -56,6 +56,14 @@ public class StatusChip extends FrameLayout {
         addView(textView, lp);
 
         setStatus(Constants.STATUS_AVAILABLE);
+        if (attrs != null) {
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.StatusChip);
+            String chipText = a.getString(R.styleable.StatusChip_chipText);
+            a.recycle();
+            if (chipText != null) {
+                setChipText(chipText);
+            }
+        }
     }
 
     public void setStatus(String status) {
@@ -104,5 +112,10 @@ public class StatusChip extends FrameLayout {
     public String getText() {
         return textView.getText().toString();
     }
-}
 
+    public void setChipText(String text) {
+        backgroundDrawable.setColor(ContextCompat.getColor(getContext(), R.color.primary_light));
+        textView.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_dark));
+        textView.setText(text);
+    }
+}

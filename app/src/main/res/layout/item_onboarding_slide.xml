@@ -4,38 +4,236 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:paddingStart="4dp"
+    android:paddingTop="4dp"
+    android:paddingEnd="4dp"
+    android:paddingBottom="4dp">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieSlide"
-        android:layout_width="260dp"
-        android:layout_height="240dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true" />
+    <!-- Visual Showcase Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface_container_low"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- Decorative Organic Watermark Background -->
+            <ImageView
+                android:layout_width="260dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:alpha="0.4"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_splash_watermark" />
+
+            <!-- Lottie Animation / Visual Illustration -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieSlide"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <!-- Overlay Impact Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_pill_surface"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_eco" />
+
+                <TextView
+                    style="@style/TextAppearance.ResQMeal.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/onboarding_badge_stat1"
+                    android:textColor="@color/on_surface"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Context Step Badge -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_pill_surface_high"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="3dp">
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:background="@drawable/bg_pill_green_dot" />
+
+        <TextView
+            style="@style/TextAppearance.ResQMeal.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/onboarding_badge_step1"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Slide Title -->
     <TextView
         android:id="@+id/tvSlideTitle"
         style="@style/TextAppearance.ResQMeal.Heading1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:textAlignment="center"
-        tools:text="Reduce Food Waste" />
+        android:layout_marginTop="8dp"
+        android:textColor="@color/on_surface"
+        android:textSize="22sp"
+        tools:text="@string/onboarding_title_1" />
 
+    <!-- Slide Description -->
     <TextView
         android:id="@+id/tvSlideDescription"
         style="@style/TextAppearance.ResQMeal.Body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/on_surface_variant"
+        tools:text="@string/onboarding_desc_1" />
+
+    <!-- Feature Highlight Chips Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:lineSpacingExtra="4dp"
-        android:textAlignment="center"
-        android:textColor="@color/text_secondary"
-        tools:text="Connect surplus food from restaurants, messes, and events with people who need it before it goes to waste." />
+        android:orientation="horizontal">
+
+        <!-- Chip 1 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_pill_surface_high"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_check"
+                app:tint="@color/primary" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/onboarding_chip_zero_waste"
+                android:textColor="@color/on_surface"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Chip 2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_pill_surface_high"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_verified"
+                app:tint="@color/primary" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/onboarding_chip_verified"
+                android:textColor="@color/on_surface"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Chip 3 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill_surface_high"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_eco"
+                app:tint="@color/secondary" />
+
+            <TextView
+                style="@style/TextAppearance.ResQMeal.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/onboarding_chip_fast_pickup"
+                android:textColor="@color/on_surface"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
-

@@ -1,6 +1,7 @@
 package com.resqmeal.app.views;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -24,30 +25,47 @@ public class EmptyStateView extends FrameLayout {
 
     public EmptyStateView(@NonNull Context context) {
         super(context);
-        init(context);
+        init(context, null);
     }
 
     public EmptyStateView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        init(context, attrs);
     }
 
     public EmptyStateView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
+        init(context, attrs);
     }
 
-    private void init(Context context) {
+    private void init(Context context, @Nullable AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.view_empty_state, this, true);
         lottieAnimation = findViewById(R.id.lottieAnimation);
         ivEmptyIcon = findViewById(R.id.ivEmptyIcon);
         tvEmptyTitle = findViewById(R.id.tvEmptyTitle);
         tvEmptyMessage = findViewById(R.id.tvEmptyMessage);
         btnEmptyAction = findViewById(R.id.btnEmptyAction);
+
+        if (attrs != null) {
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EmptyStateView);
+            String title = a.getString(R.styleable.EmptyStateView_emptyTitle);
+            String message = a.getString(R.styleable.EmptyStateView_emptyMessage);
+            a.recycle();
+            if (title != null) {
+                tvEmptyTitle.setText(title);
+            }
+            if (message != null) {
+                tvEmptyMessage.setText(message);
+            }
+        }
     }
 
     public void setContent(String title, String message) {
         tvEmptyTitle.setText(title);
+        tvEmptyMessage.setText(message);
+    }
+
+    public void setEmptyMessage(String message) {
         tvEmptyMessage.setText(message);
     }
 
